@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- Web Title -->
+  <title>UAK SOFT</title>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div id="form-parent" class="col-md-8 shadow p-3 mx-auto" style="position: relative;">
+          <h2 class="text-center">UAK SOFT</h2>
+          <hr class="my-4">
+          <form id="dataInput">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="nameDrop">Name</label>
+                  </div>
+                  <select class="custom-select" id="nameDrop">
+                    <option selected>Choose Name</option>
+                    <option value="Khurram">Khurram</option>
+                    <option value="Arsalan">Arsalan</option>
+                    <option value="Ahmed">Ahmed</option>
+                    <option value="Touqeer">Touqeer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="guageDrop">Guage</label>
+                  </div>
+                  <select class="custom-select" id="guageDrop">
+                    <option selected>Choose Guage</option>
+                    <option value="100">1</option>
+                    <option value="110">2</option>
+                    <option value="120">3</option>
+                    <option value="130">4</option>
+                    <option value="150">5</option>
+                    <option value="170">6</option>
+                    <option value="190">7</option>
+                    <option value="210">8</option>
+                    <option value="230">9</option>
+                    <option value="250">10</option>
+                    <option value="270">11</option>
+                    <option value="290">12</option>
+                    <option value="300">13</option>
+                    <option value="320">14</option>
+                    <option value="330">15</option>
+                    <option value="350">16</option>
+                    <option value="400">17</option>
+                    <option value="600">18</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="weight">Weight</label>
+                  </div>
+                  <input type="text" id="weight" class="form-control" placeholder="Weight">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <input type="submit" value="Add work" class="btn btn-secondary w-100 mx-auto">
+            </div>
+          </form>
+          <div class="text-center mt-4 d-none">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <hr>
+          <h4 class="text-center mb-3">Works List</h4>
+          <table id="resultArea" class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Guage</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Bill</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="work-list"></tbody>
+          </table>
+          <button id="clearWorks" class="btn btn-secondary w-100">Clear All Works</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/Jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
