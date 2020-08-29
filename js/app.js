@@ -20,7 +20,7 @@ class UI {
       <td>${work.name}</td>
       <td>${work.guage}</td>
       <td>${work.weight}</td>
-      <td>${work.bill.toFixed(2)}</td>
+      <td>${work.bill}</td>
       <td><button type="button" class="close text-center" aria-label="Close">
       <span class="delete" aria-hidden="true">&times;</span>
       </button></td>
@@ -109,6 +109,7 @@ class Store {
   static displayWorks() {
     const works = Store.getWorks();
     const ui = new UI;
+    document.getElementById('work-list').innerHTML = '';
     works.forEach(work => {
       ui.addWork(work);
     })
@@ -127,7 +128,13 @@ class Store {
         works.splice(index, 1);
       }
     });
+    works.forEach((work, index) => {
+      work.id = 1 + index;
+    });
     localStorage.setItem('works', JSON.stringify(works));
+    
+    // Show Remains
+    Store.displayWorks();
   }
 
   static clearWorks() {
@@ -159,7 +166,7 @@ document.getElementById('dataInput').addEventListener('submit', e => {
   // Generate ID
   const id = Store.getWorks().length + 1;
   // Instantiate Work
-  const work = new Person(id, name, guage, weight, bill);
+  const work = new Person(id, name, guage, weight, bill.toFixed(2));
 
   if(nameIndex === 0 || guageIndex === 0 || weight === '') {
     // Error Alert
